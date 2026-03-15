@@ -17,6 +17,8 @@ import { Fonts, FontTracking } from '../constants/fonts';
 
 const { width, height } = Dimensions.get('window');
 
+const GRID_LEFT = width * 0.163;
+
 const track = (fontSize: number, tracking: number) =>
   (fontSize * tracking) / 1000;
 
@@ -166,14 +168,14 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: 'flex-start',
     paddingHorizontal: 20,
-    paddingTop: height * 0.27,
+    paddingTop: height * 0.29,
   },
 
   /* HERO STACK */
 
   hero: {
     alignItems: 'flex-start',
-    paddingLeft: 60,
+    paddingLeft: GRID_LEFT,
     transform: [{ rotate: '-9.4deg' }],
   },
 
@@ -272,7 +274,7 @@ const styles = StyleSheet.create({
 
   gridLeftLine: {
     position: 'absolute',
-    left: 70,
+    left: GRID_LEFT,
     top: 0,
     bottom: 0,
     width: 3,
