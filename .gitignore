@@ -1,5 +1,12 @@
 # Learn more https://docs.github.com/en/get-started/getting-started-with-git/ignoring-files
 
+# Environment variables
+.env
+.env.local
+
+# Google Play service account key (keep secret)
+google-service-account.json
+
 # dependencies
 node_modules/
 
