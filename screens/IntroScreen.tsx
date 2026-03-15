@@ -7,7 +7,6 @@ import {
   ImageBackground,
   Image,
   Dimensions,
-  Linking,
 } from 'react-native';
 import { StatusBar } from 'expo-status-bar';
 import { router } from 'expo-router';
@@ -20,9 +19,9 @@ const { width, height } = Dimensions.get('window');
 const track = (fontSize: number, tracking: number) =>
   (fontSize * tracking) / 1000;
 
-export default function GetStartedScreen() {
+export default function IntroScreen() {
 
-  const headlineSize = 56.3;
+  const headlineSize = 30;
   const lineH = headlineSize * 1.1;
   const brandSize = 36;
   const ctaSize = 30;
@@ -84,28 +83,12 @@ export default function GetStartedScreen() {
             {/* HEADLINE */}
             <View style={[styles.headlineWrap]}>
 
-              <Text style={[styles.headline, hs]}>When you</Text>
-
-              <View style={styles.takeActionsLine}>
-
-                <Image
-                  source={require('../assets/deco_fan_right.png')}
-                  style={styles.fanLeft}
-                />
-
-                <Text style={[styles.headline, hs]}>
-                  take actions
-                </Text>
-
-                <Image
-                  source={require('../assets/deco_fan_right.png')}
-                  style={styles.fanRight}
-                />
-
-              </View>
-
-              <Text style={[styles.headline, hs]}>on your</Text>
-              <Text style={[styles.headline, hs]}>Vision Board</Text>
+              <Text style={[styles.headline, hs]}>Find to-do lists boring?</Text>
+              <Text style={[styles.headline, hs]}></Text>
+              <Text style={[styles.headline, hs]}>Vision board full of dreams</Text>
+              <Text style={[styles.headline, hs]}>but no actions?</Text>
+              <Text style={[styles.headline, hs]}></Text>
+              <Text style={[styles.headline, hs]}>Ever heard of bingo board?</Text>
 
             </View>
 
@@ -118,7 +101,7 @@ export default function GetStartedScreen() {
 
             {/* CTA */}
             <TouchableOpacity
-              onPress={() => router.push('/home')}
+              onPress={() => router.push('/get-started')}
               activeOpacity={0.8}
               style={[styles.ctaWrap]}
             >
@@ -132,7 +115,7 @@ export default function GetStartedScreen() {
                   },
                 ]}
               >
-                GET STARTED
+                NEXT
               </Text>
 
               <Image
@@ -145,13 +128,6 @@ export default function GetStartedScreen() {
 
           </View>
         </View>
-        <TouchableOpacity
-          onPress={() => Linking.openURL('https://pnngocdoan.github.io/BingoBoard/privacy-policy.html')}
-          style={styles.privacyLink}
-        >
-          <Text style={styles.privacyText}>Privacy Policy</Text>
-        </TouchableOpacity>
-
       </SafeAreaView>
     </ImageBackground>
   );
@@ -187,7 +163,7 @@ const styles = StyleSheet.create({
 
   headlineWrap: {
     alignItems: 'flex-start',
-    marginTop: 40
+    marginTop: 85
   },
 
   headline: {
@@ -223,18 +199,19 @@ const styles = StyleSheet.create({
     width: 180,
     height: 120,
     paddingTop: 15,
-    left: 40
+    left: 10
   },
 
   ctaWrap: {
-    alignItems: 'flex-start',
-    left: 90
+    alignItems: 'center',
+    alignSelf: 'center',
   },
 
   ctaText: {
     fontFamily: Fonts.body,
     fontWeight: '800',
     color: Colors.black,
+
   },
 
   ctaUnderline: {
@@ -295,41 +272,6 @@ const styles = StyleSheet.create({
     top: 530,
     height: 3,
     backgroundColor: 'rgba(0,0,0,0.15)',
-  },
-
-  privacyLink: {
-    alignSelf: 'center',
-    paddingBottom: 12,
-  },
-
-  privacyText: {
-    fontFamily: Fonts.body,
-    fontSize: 11,
-    color: Colors.black,
-    opacity: 0.4,
-    letterSpacing: track(11, FontTracking.body),
-  },
-
-  /* DEBUG */
-
-  debugRed: {
-    borderWidth: 1,
-    borderColor: 'red',
-  },
-
-  debugBlue: {
-    borderWidth: 1,
-    borderColor: 'blue',
-  },
-
-  debugGreen: {
-    borderWidth: 1,
-    borderColor: 'green',
-  },
-
-  debugYellow: {
-    borderWidth: 1,
-    borderColor: 'orange',
   },
 
 });
